@@ -91,7 +91,8 @@ abstract class WebDriverBase {
           $webdriver_command,
           $webdriver_command)));
       }
-      if (!in_array($http_method, $this->methods()[$webdriver_command])) {
+      $methods = $this->methods();
+      if (!in_array($http_method, $methods[$webdriver_command])) {
         throw(new Exception(sprintf(
           '%s is not an available http method for the command %s.',
           $http_method,
