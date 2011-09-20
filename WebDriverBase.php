@@ -117,7 +117,8 @@ abstract class WebDriverBase {
         $webdriver_command)));
     }
 
-    $http_methods = (array) $this->methods()[$webdriver_command];
+    $methods = $this->methods();
+    $http_methods = (array) $methods[$webdriver_command];
     return array_shift($http_methods);
   }
 }
